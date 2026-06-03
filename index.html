@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Risk Sentinel — Deterministic on-chain risk monitoring</title>
-<meta name="description" content="A C++ engine that turns raw EVM logs into signed alerts in under a second. Deterministic, self-hostable, EU-based. Self-host or managed." />
+<title>Risk Sentinel — Deterministic on-chain risk monitoring for DeFi protocol teams</title>
+<meta name="description" content="Customer-scoped, deterministic on-chain risk monitoring for DeFi protocol teams. Explainable alerts for governance, treasury, oracle, bridge, and approval risk. Self-hostable or managed." />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,14 +87,16 @@
       <span class="font-semibold tracking-tight">Risk Sentinel</span>
     </a>
     <div class="hidden items-center gap-7 text-sm text-muted md:flex">
-      <a href="#why" class="link-underline hover:text-text">Product</a>
-      <a href="#rules" class="link-underline hover:text-text">Rules</a>
-      <a href="#migration" class="link-underline hover:text-text">Migration</a>
-      <a href="#pricing" class="link-underline hover:text-text">Pricing</a>
+      <a href="#why" class="link-underline hover:text-text">Why now</a>
+      <a href="#rules" class="link-underline hover:text-text">What we monitor</a>
+      <a href="#scope" class="link-underline hover:text-text">Scope</a>
+      <a href="#migration" class="link-underline hover:text-text">Defender</a>
+      <a href="#pilot" class="link-underline hover:text-text">Pilot</a>
     </div>
     <div class="flex items-center gap-2.5">
       <a href="https://github.com/xjlr/risk-sentinel" class="hidden rounded-md border border-line2 px-3.5 py-1.5 text-sm text-muted transition hover:border-faint hover:text-text sm:inline-block">GitHub</a>
-      <a href="#pricing" class="btn-signal rounded-md bg-signal px-3.5 py-1.5 text-sm font-semibold text-ink">Start a pilot →</a>
+      <!-- TODO: replace with Cal.com/Calendly booking link -->
+      <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20pilot" class="btn-signal rounded-md bg-signal px-3.5 py-1.5 text-sm font-semibold text-ink">Book a pilot call →</a>
     </div>
   </nav>
 </header>
@@ -104,8 +106,8 @@
   <div class="mx-auto flex max-w-6xl items-center gap-3 px-5 py-2 text-sm">
     <span class="num shrink-0 text-amber">[ DEFENDER · 2026-07-01 ]</span>
     <p class="text-muted">
-      OpenZeppelin Defender retires July 1, 2026. Migrating your monitoring?
-      <a href="#migration" class="text-text underline decoration-amber/60 underline-offset-2 hover:decoration-amber">See the Migration Pack →</a>
+      OpenZeppelin Defender retires July 1, 2026. Replacing Defender-era monitoring?
+      <a href="#migration" class="text-text underline decoration-amber/60 underline-offset-2 hover:decoration-amber">See how we map across →</a>
     </p>
     <button onclick="document.getElementById('migbanner').remove()" aria-label="Dismiss" class="ml-auto shrink-0 px-1 text-faint hover:text-text">✕</button>
   </div>
@@ -115,22 +117,24 @@
 <section id="top" class="relative">
   <div class="mx-auto grid max-w-6xl gap-12 px-5 pt-16 pb-20 md:grid-cols-[1.05fr,.95fr] md:gap-10 md:pt-24 md:pb-28">
     <div class="flex flex-col justify-center">
-      <span class="eyebrow rise d1 text-signal">// deterministic · self-hostable · EU</span>
+      <span class="eyebrow rise d1 text-signal">// for DeFi protocol teams</span>
       <h1 class="rise d2 mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-[3.4rem]">
-        On-chain risk monitoring<br class="hidden sm:block"> you can <span class="text-signal">read, run, and own.</span>
+        Deterministic on-chain risk monitoring,
+        <span class="text-signal">scoped to your protocol.</span>
       </h1>
       <p class="rise d3 mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        Risk Sentinel is a C++ engine that turns raw EVM logs into signed alerts in
-        under a second. Every alert maps to a specific rule and a specific on-chain
-        event — no ML black box, no guesswork. Self-host it in your own
-        infrastructure, or let us run it.
+        Risk Sentinel watches the contracts you care about and fires
+        customer-specific alerts for governance, treasury, oracle, bridge, and
+        approval risk. Every alert maps to a named rule and an on-chain event
+        you can read — not a black-box score. Run it yourself, or let us run it.
       </p>
       <div class="rise d4 mt-8 flex flex-wrap items-center gap-3">
-        <a href="#pricing" class="btn-signal rounded-md bg-signal px-5 py-3 font-semibold text-ink">Start a 60-day pilot — $2,500</a>
-        <a href="#pricing" class="rounded-md border border-line2 px-5 py-3 font-medium text-text transition hover:border-faint">See pricing</a>
+        <!-- TODO: replace with Cal.com/Calendly booking link -->
+        <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20pilot" class="btn-signal rounded-md bg-signal px-5 py-3 font-semibold text-ink">Book a pilot call</a>
+        <a href="#rules" class="rounded-md border border-line2 px-5 py-3 font-medium text-text transition hover:border-faint">See what we monitor</a>
       </div>
       <p class="rise d5 num mt-9 max-w-xl text-xs leading-relaxed text-faint">
-        Ethereum + Arbitrum · 6 detection rules · HMAC-signed webhooks · Postgres multi-tenant · Prometheus metrics · 100+ tests · open core on GitHub
+        Ethereum + Arbitrum · governance, treasury, oracle, bridge &amp; approval coverage · signed, replay-protected alerts · open core on GitHub
       </p>
     </div>
 
@@ -142,54 +146,57 @@
             <span class="h-2.5 w-2.5 rounded-full bg-signal/80"></span>
             <span class="num text-xs text-muted">alert.delivered</span>
           </div>
-          <span class="num text-[.68rem] text-faint">signal → alert · 412ms</span>
+          <span class="num text-[.68rem] text-faint">signed webhook · rule: governance</span>
         </div>
         <pre class="num overflow-x-auto px-4 py-4 text-[.74rem] leading-relaxed text-muted"><span class="text-faint">POST</span> <span class="text-text">https://hooks.acme.xyz/risk</span>
 <span class="text-faint">X-Risk-Sentinel-Signature:</span> <span class="text-signal">sha256=f3a1b2c3…</span>
+<span class="text-faint">X-Risk-Sentinel-Timestamp:</span> <span class="text-signal">1714000000000</span>
 
 <span class="text-faint">{</span>
   <span class="text-text">"customer_id"</span>:   <span class="text-signal">42</span>,
   <span class="text-text">"rule_type"</span>:     <span class="text-amber">"governance"</span>,
-  <span class="text-text">"message"</span>:       <span class="text-amber">"Upgraded detected"</span>,
+  <span class="text-text">"message"</span>:       <span class="text-amber">"Governance action 'Upgraded' detected on 0xfd08…fcbb9"</span>,
   <span class="text-text">"chain_id"</span>:      <span class="text-signal">42161</span>,
   <span class="text-text">"token_address"</span>: <span class="text-amber">"0xfd08…fcbb9"</span>,
   <span class="text-text">"timestamp_ms"</span>:  <span class="text-signal">1714000000000</span>
 <span class="text-faint">}</span></pre>
         <div class="border-t border-line px-4 py-2.5">
-          <p class="num text-[.68rem] text-faint">// every field traces to a rule and an on-chain event</p>
+          <p class="num text-[.68rem] text-faint">// HMAC-SHA256 + replay protection · every field traces to a rule and an on-chain event</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ░░ DIFFERENTIATOR ░░ -->
+<!-- ░░ WHY NOW / PROBLEM ░░ -->
 <section id="why" class="border-t border-line">
   <div class="mx-auto max-w-6xl px-5 py-20">
-    <span class="eyebrow text-signal">// why risk sentinel</span>
-    <h2 class="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">Built on principles your auditors will recognize.</h2>
+    <span class="eyebrow text-signal">// why teams talk to us now</span>
+    <h2 class="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">Monitoring that an on-call engineer and an auditor can both defend.</h2>
+    <p class="mt-5 max-w-2xl leading-relaxed text-muted">
+      Protocol security teams tell us the same things. Defender-era automation is going away, and the OSS successors hand you parts, not a running stack. Generic threat scores fire often and explain little — and no one wants to defend a black-box alert to auditors or multisig signers.
+    </p>
 
     <div class="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-      <!-- card -->
       <div class="card card-accent bg-surface p-7">
         <span class="num text-sm text-faint">01</span>
-        <h3 class="mt-4 text-lg font-semibold">Deterministic, not a black box</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Every alert is traceable to a rule and an on-chain event you can read in source. When it fires, you can explain exactly why — to your team, your auditors, and your board.</p>
+        <h3 class="mt-4 text-lg font-semibold">Defender is going away</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">The hosted platform retires July 1, 2026. The OSS successors ship as Docker images and config — capable, but not a running detection stack you can deploy on Monday.</p>
       </div>
       <div class="card card-accent bg-surface p-7">
         <span class="num text-sm text-faint">02</span>
-        <h3 class="mt-4 text-lg font-semibold">Self-hostable by design</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Ships as a single binary or Docker image. Your keys, your nodes, your data. No third-party data egress, no SaaS lock-in. Or run it as managed cloud — your call, not ours.</p>
+        <h3 class="mt-4 text-lg font-semibold">Generic alerts, generic noise</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Global rules and shared thresholds fire on every protocol the same way. On-call drowns in alerts that aren't theirs, and ignores the ones that are.</p>
       </div>
       <div class="card card-accent bg-surface p-7">
         <span class="num text-sm text-faint">03</span>
-        <h3 class="mt-4 text-lg font-semibold">EU-based, in EU jurisdiction</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Operated by an EU company. Your monitoring stack and its data stay in EU jurisdiction. B2B invoicing under reverse charge — no surprise VAT on the invoice.</p>
+        <h3 class="mt-4 text-lg font-semibold">Black-box scoring is hard to defend</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">When the alert fires at 03:00, you need to explain it to your team and your auditors. "The model said so" is not an answer either group accepts.</p>
       </div>
       <div class="card card-accent bg-surface p-7">
         <span class="num text-sm text-faint">04</span>
-        <h3 class="mt-4 text-lg font-semibold">Low noise by default</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Threshold-based, per-customer rules with no global default triggers. You configure what matters; your on-call doesn't drown in alerts that don't.</p>
+        <h3 class="mt-4 text-lg font-semibold">Protocol-specific risk is invisible</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Generic tools don't know which contracts are your treasury, which roles your governance grants, which feeds your oracles. They watch chains; you need them to watch <em>your</em> protocol.</p>
       </div>
     </div>
   </div>
@@ -200,40 +207,115 @@
   <div class="mx-auto max-w-6xl px-5 py-20">
     <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
       <div>
-        <span class="eyebrow text-signal">// detection</span>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Six detection rules, live today.</h2>
+        <span class="eyebrow text-signal">// what we monitor</span>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Six rules, shipped and tested.</h2>
       </div>
-      <p class="max-w-md text-sm leading-relaxed text-muted">Each rule is customer-scoped and threshold-driven. Rules are transparent source you can audit — and new ones ship the same way.</p>
+      <p class="max-w-md text-sm leading-relaxed text-muted">Each rule is customer-scoped to your contracts and thresholds. Rules are transparent source you can audit — and they surface specific on-chain risk signals, not generic exploit predictions.</p>
     </div>
 
     <div class="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
       <div class="card bg-surface p-7">
-        <h3 class="num text-base font-bold text-signal">LargeTransfer</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Token transfers above a per-token, per-chain threshold.</p>
-      </div>
-      <div class="card bg-surface p-7">
         <h3 class="num text-base font-bold text-signal">Governance</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Ownership transfers, role grants/revokes, pause / unpause, and proxy upgrades on your watched contracts.</p>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Ownership transfers, role grants and revokes, pause and unpause, proxy upgrades on the contracts you watch.</p>
+        <p class="num mt-3 text-[.7rem] text-faint">// surfaces: admin takeover, unauthorised upgrades, governance compromise</p>
       </div>
       <div class="card bg-surface p-7">
-        <h3 class="num text-base font-bold text-signal">MintBurn</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Mint or burn events above your per-token limits.</p>
-      </div>
-      <div class="card bg-surface p-7">
-        <h3 class="num text-base font-bold text-signal">Approval</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Large ERC-20 approvals — and infinite (uint256.max) approvals.</p>
+        <h3 class="num text-base font-bold text-signal">LargeTransfer</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Token movements above a per-token, per-chain threshold you set.</p>
+        <p class="num mt-3 text-[.7rem] text-faint">// surfaces: treasury drains, unexpected outflows</p>
       </div>
       <div class="card bg-surface p-7">
         <h3 class="num text-base font-bold text-signal">BridgeTransfer</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Large transfers into known cross-chain bridge contracts.</p>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Large transfers directed into known cross-chain bridge contracts.</p>
+        <p class="num mt-3 text-[.7rem] text-faint">// surfaces: funds moving off-chain ahead of disclosure</p>
+      </div>
+      <div class="card bg-surface p-7">
+        <h3 class="num text-base font-bold text-signal">Approval</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Large ERC-20 approvals and infinite (uint256.max) approvals against your contracts and treasury accounts.</p>
+        <p class="num mt-3 text-[.7rem] text-faint">// surfaces: approval-drain setups, dangerous spender grants</p>
+      </div>
+      <div class="card bg-surface p-7">
+        <h3 class="num text-base font-bold text-signal">MintBurn</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Mint and burn events above your per-token limits.</p>
+        <p class="num mt-3 text-[.7rem] text-faint">// surfaces: unauthorised supply changes, peg or accounting anomalies</p>
       </div>
       <div class="card bg-surface p-7">
         <h3 class="num text-base font-bold text-signal">OracleUpdate</h3>
         <p class="mt-3 text-sm leading-relaxed text-muted">Chainlink price-feed moves beyond a basis-point threshold between updates.</p>
+        <p class="num mt-3 text-[.7rem] text-faint">// surfaces: feed deviations relevant to liquidations and oracle-dependent positions</p>
       </div>
     </div>
 
-    <p class="num mt-6 max-w-3xl text-xs leading-relaxed text-faint">// strongest coverage is on attacks that begin with an on-chain administrative action — ownership changes, role grants, upgrades — which leave a detectable signal before funds move, giving you lead time to respond.</p>
+    <p class="num mt-6 max-w-3xl text-xs leading-relaxed text-faint">// strongest coverage is on risks that begin with an on-chain administrative action — ownership changes, role grants, upgrades — which leave a detectable signal before funds move. Scope and limits are stated plainly in <a href="#scope" class="underline decoration-faint hover:decoration-signal">honest scope</a>.</p>
+    <p class="num mt-2 max-w-3xl text-xs leading-relaxed text-faint">// chains today: Ethereum + Arbitrum · oracle support: Chainlink (Pyth and others scoped on request).</p>
+  </div>
+</section>
+
+<!-- ░░ HOW IT WORKS ░░ -->
+<section id="how" class="border-t border-line bg-surface/40">
+  <div class="mx-auto max-w-6xl px-5 py-20">
+    <span class="eyebrow text-signal">// how it works</span>
+    <h2 class="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">Operational trust, not magic.</h2>
+
+    <div class="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div class="card bg-surface p-7">
+        <span class="num text-sm text-faint">01</span>
+        <h3 class="mt-4 text-base font-semibold">Rules, mapped to events</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Each alert names the rule that fired and the on-chain event that triggered it. Open the rule in source, read the predicate, explain it to your auditor.</p>
+      </div>
+      <div class="card bg-surface p-7">
+        <span class="num text-sm text-faint">02</span>
+        <h3 class="mt-4 text-base font-semibold">Scoped to your protocol</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">You list the contracts to watch, the roles that matter, and the thresholds. Multi-tenant Postgres keeps each customer's configuration isolated.</p>
+      </div>
+      <div class="card bg-surface p-7">
+        <span class="num text-sm text-faint">03</span>
+        <h3 class="mt-4 text-base font-semibold">Signed webhook delivery</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">HMAC-SHA256 signatures with replay protection, Stripe/GitHub-style. Webhook secrets are AES-256-GCM encrypted at rest. Telegram and console outputs available alongside.</p>
+      </div>
+      <div class="card bg-surface p-7">
+        <span class="num text-sm text-faint">04</span>
+        <h3 class="mt-4 text-base font-semibold">Self-host or managed</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted">Open core on GitHub. Run it inside your own infrastructure — your keys, your nodes, your data — or let us host it. Prometheus metrics and a backtest/replay framework either way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ HONEST SCOPE ░░ -->
+<section id="scope" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-20">
+    <div class="grid gap-12 lg:grid-cols-[.9fr,1.1fr]">
+      <div>
+        <span class="eyebrow text-amber">// honest scope</span>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">What Risk Sentinel is — and what it isn't.</h2>
+        <p class="mt-6 leading-relaxed text-muted">
+          We'd rather lose a deal in week one than lose your trust in week six. Risk Sentinel is a deterministic, explainable engine for customer-scoped on-chain risk — not a black-box exploit predictor, and there are well-known attack classes it cannot see ahead of time.
+        </p>
+        <p class="mt-4 leading-relaxed text-muted">
+          Risk Sentinel is early-stage: the rules are implemented and tested, but not yet proven in customer production — which is why the first engagement is a scoped pilot.
+        </p>
+      </div>
+      <div class="grid content-start gap-px overflow-hidden rounded-xl border border-line bg-line">
+        <div class="bg-surface p-6">
+          <p class="num text-[.7rem] uppercase tracking-wider text-signal">Where it's strongest</p>
+          <p class="mt-3 text-sm leading-relaxed text-text">Risks that begin with an on-chain admin action — ownership transfer, role change, proxy upgrade, governance execution — which leave a detectable signal before funds move.</p>
+        </div>
+        <div class="bg-surface p-6">
+          <p class="num text-[.7rem] uppercase tracking-wider text-amber">Where it does not help, before the fact</p>
+          <ul class="mt-3 space-y-2.5 text-sm leading-relaxed text-muted">
+            <li><span class="text-text">Internal-vault oracle manipulation</span> (Cream / Harvest-style) — economic exploits that don't surface as administrative events.</li>
+            <li><span class="text-text">Pure smart-contract logic flaws</span> (Euler / KyberSwap-style) — bugs in protocol code that execute as ordinary transactions.</li>
+            <li><span class="text-text">Off-chain key compromise</span> (Ronin-style) — signed transactions that look legitimate on-chain.</li>
+          </ul>
+          <p class="num mt-4 text-[.7rem] text-faint">// these classes need audits, formal verification, and key-management controls — not on-chain monitoring</p>
+        </div>
+        <div class="bg-surface p-6">
+          <p class="num text-[.7rem] uppercase tracking-wider text-faint">Today</p>
+          <p class="mt-3 text-sm leading-relaxed text-muted">No dashboard or UI yet, and no RBAC — rules are configured via database/CLI rather than a console, and alerts flow through the signed webhook. Worth knowing up front so the pilot fits how your team already works.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -242,160 +324,114 @@
   <div class="mx-auto max-w-6xl px-5 py-20">
     <div class="grid gap-10 lg:grid-cols-[1fr,1fr]">
       <div>
-        <span class="eyebrow text-amber">// migration</span>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Coming off OpenZeppelin Defender?</h2>
+        <span class="eyebrow text-amber">// replacing defender</span>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">If you're coming off OpenZeppelin Defender.</h2>
         <p class="mt-6 leading-relaxed text-muted">
-          Defender's hosted platform retires <span class="num text-text">July 1, 2026</span>, and new
-          sign-ups already closed in mid-2025. The open-source successors — Monitor
-          and Relayer — ship as Docker images and config files. They're capable, but
-          they hand you the assembly, not a running detection stack, and there's no
-          drop-in replacement for Defender's automated Actions.
+          Defender's hosted platform retires <span class="num text-text">July 1, 2026</span>; new sign-ups closed in mid-2025. The OSS successors — Monitor and Relayer — ship as Docker images and config: capable, but assembly, not a running detection stack, and no drop-in replacement for Defender's Actions.
         </p>
         <p class="mt-4 leading-relaxed text-muted">
-          Risk Sentinel gives you a working engine instead of a starter kit: six
-          rules out of the box, HMAC-signed delivery, and multi-tenant config —
-          self-hosted in your environment, or fully managed by us. We map your
-          existing Defender Sentinels to Risk Sentinel rules and run both in parallel
-          until you're confident enough to cut over.
+          Risk Sentinel is a deterministic, self-hostable alternative for scoped alerting. We map your existing Sentinels to our rules and run both in parallel until you're confident to cut over.
         </p>
-
-        <div class="mt-8 rounded-lg border border-amber/30 bg-amber/[.06] p-5">
-          <p class="text-sm leading-relaxed text-text">
-            Not ready to commit? Start with a
-            <span class="font-semibold text-amber">60-day pilot at $2,500</span> —
-            credited 1:1 toward your annual contract.
-          </p>
-        </div>
-        <a href="#pricing" class="btn-signal mt-6 inline-block rounded-md bg-signal px-5 py-3 font-semibold text-ink">Talk to us about migration</a>
+        <!-- TODO: replace with Cal.com/Calendly booking link -->
+        <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20Defender%20migration" class="btn-signal mt-8 inline-block rounded-md bg-signal px-5 py-3 font-semibold text-ink">Discuss a migration</a>
       </div>
 
-      <div class="grid content-start gap-px overflow-hidden rounded-xl border border-line bg-line">
-        <div class="card bg-surface2 p-6">
-          <div class="flex items-baseline justify-between gap-4">
-            <h3 class="font-semibold">Migration Pack — Lite</h3>
-            <span class="num shrink-0 text-sm text-signal">$1,500 + $800/mo</span>
+      <div>
+        <p class="eyebrow text-faint">// migration pack — typical starting scopes</p>
+        <div class="mt-4 grid content-start gap-px overflow-hidden rounded-xl border border-line bg-line">
+          <div class="card bg-surface2 p-6">
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="font-semibold">Lite scope</h3>
+              <span class="num shrink-0 text-sm text-signal">from $1,500 + $800/mo</span>
+            </div>
+            <p class="mt-2 text-sm text-muted">Typical starting point: core rules, single chain, guided cutover. Sized for a handful of Sentinels.</p>
           </div>
-          <p class="mt-2 text-sm text-muted">Core rules, single chain, guided cutover.</p>
-        </div>
-        <div class="card bg-surface2 p-6">
-          <div class="flex items-baseline justify-between gap-4">
-            <h3 class="font-semibold">Migration Pack — Standard</h3>
-            <span class="num shrink-0 text-sm text-signal">$3,500 + $2,500/mo</span>
+          <div class="card bg-surface2 p-6">
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="font-semibold">Standard scope</h3>
+              <span class="num shrink-0 text-sm text-signal">from $3,500 + $2,500/mo</span>
+            </div>
+            <p class="mt-2 text-sm text-muted">Typical starting point: full rule set, Ethereum + Arbitrum, signed webhooks, parallel-run validation against your existing Sentinels.</p>
           </div>
-          <p class="mt-2 text-sm text-muted">Full rule set, ETH + Arbitrum, signed webhooks, parallel-run validation.</p>
-        </div>
-        <div class="card bg-surface2 p-6">
-          <div class="flex items-baseline justify-between gap-4">
-            <h3 class="font-semibold">Migration Pack — Enterprise</h3>
-            <span class="num shrink-0 text-sm text-signal">$5,000 + $5,500/mo</span>
+          <div class="card bg-surface2 p-6">
+            <div class="flex items-baseline justify-between gap-4">
+              <h3 class="font-semibold">Enterprise scope</h3>
+              <span class="num shrink-0 text-sm text-signal">from $5,000 + $5,500/mo</span>
+            </div>
+            <p class="mt-2 text-sm text-muted">Typical starting point: custom rule mapping, SLA, hands-on migration support. Scoped together before kickoff.</p>
           </div>
-          <p class="mt-2 text-sm text-muted">Custom rule mapping, SLA, hands-on migration support.</p>
         </div>
+        <p class="num mt-4 text-[.7rem] leading-relaxed text-faint">// pricing is a starting point; final scope agreed in writing before any work begins</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ░░ PRICING ░░ -->
-<section id="pricing" class="border-t border-line">
+<!-- ░░ PILOT ░░ -->
+<section id="pilot" class="border-t border-line">
   <div class="mx-auto max-w-6xl px-5 py-20">
-    <span class="eyebrow text-signal">// pricing</span>
-    <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Transparent pricing. Start where it fits.</h2>
-    <p class="mt-4 max-w-xl text-muted">Self-serve Cloud tiers below. Custom and self-host engagements are scoped with you.</p>
+    <span class="eyebrow text-signal">// the pilot</span>
+    <h2 class="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">A 60-day pilot, scoped to your protocol.</h2>
+    <p class="mt-5 max-w-2xl leading-relaxed text-muted">
+      There's no self-serve plan. The first engagement is a scoped pilot: we configure rules to your contracts, tune thresholds against real traffic, and prove the alerts are useful before you commit to anything ongoing.
+    </p>
 
-    <!-- Cloud row -->
-    <p class="eyebrow mt-12 text-faint">// cloud — managed by us</p>
-    <div class="mt-4 grid gap-5 md:grid-cols-3">
-      <div class="card rounded-xl border border-line bg-surface p-7">
-        <h3 class="font-semibold">Starter</h3>
-        <p class="num mt-3 text-3xl font-bold">$499<span class="text-base font-normal text-muted">/mo</span></p>
-        <ul class="mt-5 space-y-2.5 text-sm text-muted">
-          <li class="flex gap-2"><span class="text-signal">›</span> One chain</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> Core rules</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> Webhook + Telegram alerts</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> Community support</li>
-        </ul>
-        <a href="#contact" class="mt-7 block rounded-md border border-line2 py-2.5 text-center text-sm font-medium transition hover:border-faint">See details</a>
-      </div>
-
-      <div class="card-accent card relative rounded-xl border border-signal/50 bg-surface p-7 shadow-[0_0_40px_-12px_rgba(166,240,53,.35)]">
-        <span class="num absolute -top-2.5 left-7 rounded-sm bg-signal px-2 py-0.5 text-[.62rem] font-bold uppercase tracking-wider text-ink">Recommended for migrants</span>
-        <h3 class="font-semibold">Pro</h3>
-        <p class="num mt-3 text-3xl font-bold">$2,500<span class="text-base font-normal text-muted">/mo</span></p>
-        <ul class="mt-5 space-y-2.5 text-sm text-muted">
-          <li class="flex gap-2"><span class="text-signal">›</span> Ethereum + Arbitrum</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> All 6 rules</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> HMAC-signed webhooks</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> Prometheus metrics</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> Email support</li>
-        </ul>
-        <a href="#contact" class="btn-signal mt-7 block rounded-md bg-signal py-2.5 text-center text-sm font-semibold text-ink">Start a pilot</a>
-      </div>
-
-      <div class="card rounded-xl border border-line bg-surface p-7">
-        <h3 class="font-semibold">Business</h3>
-        <p class="num mt-3 text-3xl font-bold">from $7,500<span class="text-base font-normal text-muted">/mo</span></p>
-        <ul class="mt-5 space-y-2.5 text-sm text-muted">
-          <li class="flex gap-2"><span class="text-signal">›</span> Custom rules</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> SLA</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> Priority support</li>
-          <li class="flex gap-2"><span class="text-signal">›</span> Dedicated onboarding</li>
-        </ul>
-        <a href="#contact" class="mt-7 block rounded-md border border-line2 py-2.5 text-center text-sm font-medium transition hover:border-faint">Talk to us</a>
-      </div>
-    </div>
-
-    <!-- Migration pack compact -->
-    <p class="eyebrow mt-14 text-faint">// oz defender migration pack</p>
-    <div class="mt-4 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
-      <div class="bg-surface p-6">
-        <h4 class="font-semibold">Lite</h4>
-        <p class="num mt-2 text-sm text-signal">$1,500 setup + $800/mo</p>
-      </div>
-      <div class="bg-surface p-6">
-        <h4 class="font-semibold">Standard</h4>
-        <p class="num mt-2 text-sm text-signal">$3,500 setup + $2,500/mo</p>
-      </div>
-      <div class="bg-surface p-6">
-        <h4 class="font-semibold">Enterprise</h4>
-        <p class="num mt-2 text-sm text-signal">$5,000 setup + $5,500/mo</p>
-      </div>
-    </div>
-
-    <!-- Pilot hook -->
-    <div class="mt-8 overflow-hidden rounded-xl border border-signal/40 bg-gradient-to-br from-signal/[.08] to-transparent p-8">
-      <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-        <div>
-          <p class="eyebrow text-signal">// the pilot</p>
-          <h3 class="mt-3 text-2xl font-bold">60-day paid pilot — <span class="num">$2,500</span></h3>
-          <p class="mt-3 max-w-xl text-sm leading-relaxed text-muted">Full Pro capabilities, hands-on setup, no long-term commitment. Credited <span class="text-text">1:1 toward your annual contract</span> if you continue.</p>
+    <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr,.9fr]">
+      <div class="grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
+        <div class="bg-surface p-6">
+          <span class="num text-sm text-faint">01</span>
+          <h3 class="mt-3 text-base font-semibold">Rule configuration</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">We sit down with your team and configure the six rules against your contracts, roles, treasury addresses, and thresholds.</p>
         </div>
-        <a href="#contact" class="btn-signal shrink-0 rounded-md bg-signal px-6 py-3 font-semibold text-ink">Start a pilot</a>
+        <div class="bg-surface p-6">
+          <span class="num text-sm text-faint">02</span>
+          <h3 class="mt-3 text-base font-semibold">Deployment support</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">Self-hosted in your infrastructure or managed by us. We do the setup either way.</p>
+        </div>
+        <div class="bg-surface p-6">
+          <span class="num text-sm text-faint">03</span>
+          <h3 class="mt-3 text-base font-semibold">Webhook integration</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">Signed webhooks to any HTTPS endpoint — your own, or Slack / PagerDuty via their incoming webhooks. Telegram and console available too.</p>
+        </div>
+        <div class="bg-surface p-6">
+          <span class="num text-sm text-faint">04</span>
+          <h3 class="mt-3 text-base font-semibold">Threshold tuning</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">We replay history and tune thresholds together, so alerts are useful from day one rather than after weeks of paging.</p>
+        </div>
+        <div class="bg-surface p-6 sm:col-span-2">
+          <span class="num text-sm text-faint">05</span>
+          <h3 class="mt-3 text-base font-semibold">Weekly review loop</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">A standing weekly review with your security or ops lead: which alerts fired, which were noise, what to tighten, what to add. The pilot ends with a written summary either way.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="rounded-xl border border-signal/40 bg-gradient-to-br from-signal/[.08] to-transparent p-7">
+          <p class="eyebrow text-signal">// engagement</p>
+          <h3 class="mt-3 text-2xl font-bold">Pilot engagement from <span class="num">$2,500</span></h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted">60 days. No long-term commitment. Credited toward an annual engagement if you continue.</p>
+          <!-- TODO: replace with Cal.com/Calendly booking link -->
+          <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20pilot" class="btn-signal mt-6 inline-block w-full rounded-md bg-signal px-5 py-3 text-center font-semibold text-ink">Book a pilot call</a>
+          <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20pilot%20scope" class="mt-3 inline-block w-full rounded-md border border-line2 px-5 py-3 text-center font-medium text-text transition hover:border-faint">Request a pilot scope</a>
+        </div>
+        <p class="num mt-5 text-xs leading-relaxed text-faint">
+          // 60-day pilot from $2,500, credited toward an annual engagement. Ongoing managed or self-hosted plans are scoped during the pilot. Open-source core is available on <a href="https://github.com/xjlr/risk-sentinel" class="underline decoration-faint hover:decoration-signal">GitHub</a> at no cost.
+        </p>
       </div>
     </div>
-
-    <!-- self-host / dao -->
-    <p class="mt-8 text-sm text-muted">
-      Self-host Enterprise licences and DAO monitoring retainers are scoped per engagement.
-      <a href="#contact" class="link-underline text-text">Contact us →</a>
-    </p>
-
-    <p class="num mt-8 max-w-3xl text-xs leading-relaxed text-faint">
-      // prices in USD. EU B2B sales are invoiced under reverse charge — no VAT added.
-      Self-hosted deployments keep all data inside your own infrastructure.
-    </p>
   </div>
 </section>
 
 <!-- ░░ FINAL CTA ░░ -->
 <section id="contact" class="border-t border-line">
   <div class="mx-auto max-w-6xl px-5 py-24 text-center">
-    <span class="eyebrow text-signal">// before july 1, 2026</span>
-    <h2 class="mx-auto mt-5 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">Get monitoring in place before the Defender deadline.</h2>
-    <p class="mx-auto mt-5 max-w-xl text-muted">Start a 60-day pilot for $2,500 — credited toward your annual contract. Self-host or managed, live in days.</p>
+    <span class="eyebrow text-signal">// next step</span>
+    <h2 class="mx-auto mt-5 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">Tell us which contracts keep you up at night.</h2>
+    <p class="mx-auto mt-5 max-w-xl text-muted">A 30-minute call to walk through your monitoring setup, the gaps you see, and whether a scoped pilot makes sense. No deck, no pressure.</p>
     <div class="mt-9 flex flex-wrap justify-center gap-3">
-      <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20pilot" class="btn-signal rounded-md bg-signal px-6 py-3 font-semibold text-ink">Start a pilot</a>
-      <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20enquiry" class="rounded-md border border-line2 px-6 py-3 font-medium transition hover:border-faint">Talk to us</a>
+      <!-- TODO: replace with Cal.com/Calendly booking link -->
+      <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20pilot" class="btn-signal rounded-md bg-signal px-6 py-3 font-semibold text-ink">Book a pilot call</a>
+      <a href="mailto:hello@rndblck.io?subject=Risk%20Sentinel%20enquiry" class="rounded-md border border-line2 px-6 py-3 font-medium transition hover:border-faint">Just have questions</a>
     </div>
   </div>
 </section>
